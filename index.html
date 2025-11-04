@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema-management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Cinema-management</div>
+      <ul class="nav-links">
+        <li><a href="#classe">Classes</a></li>
+        <li><a href="#principios">Conceitos Utilizados</a></li>
+        <li><a href="#projects">Projetos</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Gerenciamento de um cinema com Programação Orientada a Objetos</h1>
+      <div class="hero-buttons">
+        <a href="#principios" class="btn yellow">Conceitos aplicados</a>
+        <a href="https://github.com/vvm-sw/cinema-management" class="btn outline">Projeto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- classes -->
+<section id="classe" class="section">
+  <h2>Classes Principais</h2>
+  <div class="classe-container">
+    <div class="classe-card">
+      <h3>Classe Cinema</h3>
+      <p>Representa o estabelecimento em si, contém informações principais sobre o local onde as sessões são realizadas. Armazena atributos como identificador, nome, endereço, horário de abertura  e horário de fechamento.
+</p>
+    </div>
+
+    <div class="classe-card">
+      <h3>Classe Sala</h3>
+      <p>Representa as salas disponíveis para a exibição dos filmes, onde as exibições ocorrem. Cada sala possui atributos que definem suas características principais, como identificador, tipo, nome, capacidade e assentos disponíveis.
+</p>
+    </div>
+
+    <div class="classe-card">
+      <h3>Classe Filme</h3>
+      <p>Representa os filmes disponíveis para exibição no cinema. Cada filme possui atributos que definem suas características principais como identificador, título, gênero e descrição. Essa classe é fundamental para que outras partes do sistema possam funcionar corretamente.</p>
+    </div>
+
+    <div class="classe-card">
+      <h3>Classe Sessão</h3>
+      <p>Tem papel fundamental, pois representa a ligação entre o filme e a sala, representa uma exibição específica em determinado horário. Seus atributos principais incluem o identificador da sessão, o filme exibido, a sala utilizada e o horário de exibição. Essa classe permite organizar a agenda de exibições.</p>
+    </div>
+
+    <div class="classe-card">
+      <h3>Classe Ingresso</h3>
+      <p>Representa a compra ou reserva de ingressos para uma determinada sessão. Ela se relaciona diretamente com as classes sessão e sala. Seus atributos incluem identificador do ingresso, o preço, e sessão.
+</p>
+    </div>
+
+    <div class="classe-card">
+      <h3>Classe Funcionário</h3>
+      <p>São os colaboradores do sistema, a classe armazena informações pessoais e funcionais dos funcionários, como identificação, nome, salário e cargo. Serve como classe base para a hierarquia de pessoal, aplicando o conceito de herança. A partir dessa classe foi possível criar subclasses que representavam diferentes tipos de funcionários, como administradores e atendentes.
+    </div>
+  </div>
+</section>
+
+
+  <!-- Principios -->
+<section id="principios" class="section">
+  <h2>Princípios de Orientação a Objetos Aplicados</h2>
+  <div class="principios-container">
+    <div class="principios-card">
+      <h3>Herança</h3>
+      <p>No projeto temos a implementação de herança na classe Funcionario, que é estendida pelas classes Administrador e Atendente. A classe Funcionario define os atributos e comportamentos comuns de todos os tipos de funcionários. Enquanto as classes Administrador e Atendente implementam suas particularidades.</p>
+    </div>
+
+    <div class="principios-card">
+      <h3>Polimorfismo</h3>
+      <p>A classe que representa os filmes possui diferentes maneiras de ser inicializada. Por exemplo, é possível criar um filme completamente vazio, um filme novo com apenas título, gênero e descrição, ou ainda um filme já existente com um identificador numérico definido. </p>
+    </div>
+
+    <div class="principios-card">
+      <h3>Encapsulamento</h3>
+      <p>O encapsulamento é utilizado para proteger os atributos internos das classes e controlar o acesso a eles através de métodos públicos como(getters e setters). Na classe Filme, todos os atributos (id, titulo, gênero, descrição) são privados, sendo acessados ou modificados apenas por meio dos métodos de acesso. Isso garante a integridade dos dados e evita alterações indevidas fora da classe.</p>
+    </div>
+
+    <div class="principios-card">
+      <h3>Abstração</h3>
+      <p>A classe Filme concentra apenas as informações essenciais, como título, gênero e descrição, refletindo o que realmente importa dentro do contexto da aplicação. Já a classe RepositorioFilmes atua como uma estrutura que organiza e manipula vários filmes, simulando o papel de um banco de dados, mas de forma simplificada e integrada ao código.</p>
+    </div>
+
+    <div class="principios-card">
+      <h3>Modularização</h3>
+      <p>A modularização é aplicada por exemplo na separação do código em múltiplos arquivos (.h e .cpp), cada um com responsabilidades específicas. Isso acaba facilitando a manutenção, a legibilidade e a reutilização do código.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- PROJECTS -->
+<section id="projects" class="section projects">
+  <h2>Capturas do projeto</h2>
+
+  <div class="project-card" onclick="openImage('Fotos do projeto/tela-inicial.jpeg', 'Tela inicial do sistema')">
+    <img src="Fotos do projeto/tela-inicial.jpeg" alt="Tela inicial do sistema">
+    <div class="project-info">
+      <h3>Tela inicial</h3>
+      <p>                                                                              </p>
+    </div>
+  </div>
+
+  <div class="project-card" onclick="openImage('Fotos do projeto/menu-admin.jpeg')">
+    <img src="Fotos do projeto/menu-admin.jpeg">
+    <div class="project-info">
+      <h3>Menu do administrador após fazer o login</h3>
+      <p>                                                                              </p>
+    </div>
+  </div>
+
+  <div class="project-card" onclick="openImage('Fotos do projeto/menu-atendente.jpeg')">
+    <img src="Fotos do projeto/menu-atendente.jpeg" alt="Menu do atendente após fazer login">
+    <div class="project-info">
+      <h3>Menu do atendente após fazer login</h3>
+      <p>                                                                          </p>
+    </div>
+  </div>
+
+  <div class="project-card" onclick="openImage('Fotos do projeto/crud-filmes.jpeg')">
+    <img src="Fotos do projeto/crud-filmes.jpeg" alt="Tela de gerenciamento de filmes">
+    <div class="project-info">
+      <h3>Imagem de um cadastro de filme</h3>
+      <p>                                                                          </p>
+    </div>
+  </div>
+
+  <div class="project-card" onclick="openImage('Fotos do projeto/cadastro-filme.jpeg')">
+    <img src="Fotos do projeto/cadastro-filme.jpeg" alt="Tela de cadastro de filme">
+    <div class="project-info">
+      <h3>Imagem de gerenciamento de filmes</h3>
+      <p>                                                                          </p>
+    </div>
+  </div>
+
+</section>
+
+<section id="team" class="team-section">
+  <h2>Nossa equipe</h2>
+  <div class="team-container">
+    <div class="team-card">
+      <img src="Fotos do projeto/member1.jpg" alt="Integrante 1">
+      <h3>Andrews Sales</h3>
+    </div>
+    <div class="team-card">
+      <img src="Fotos do projeto/member2.jpg" alt="Integrante 2">
+      <h3>João Wictor</h3>
+    </div>
+    <div class="team-card">
+      <img src="Fotos do projeto/member3.jpg" alt="Integrante 3">
+      <h3>José Ivan</h3>
+    </div>
+    <div class="team-card">
+      <img src="Fotos do projeto/member4.jpg" alt="Integrante 4">
+      <h3>Kaylanne Eduarda</h3>
+    </div>
+    <div class="team-card">
+      <img src="Fotos do projeto/member5.jpg" alt="Integrante 5">
+      <h3>Vinicius Moreira</h3>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Gardener. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Modal de imagem em tela cheia -->
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+  <span class="close-btn">&times;</span>
+  <img id="modalImg" class="modal-content" alt="">
+</div>
+
+</body>
+</html>
